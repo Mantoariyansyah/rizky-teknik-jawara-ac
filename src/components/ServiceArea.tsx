@@ -3,9 +3,12 @@ import { SectionHeading } from "./SectionHeading";
 import { areas } from "@/lib/data";
 
 const markers: [number, number][] = [
-  [30, 25],
-  [70, 40],
-  [45, 72],
+  [22, 22],
+  [58, 18],
+  [82, 40],
+  [30, 60],
+  [55, 55],
+  [45, 80],
 ];
 
 export function ServiceArea() {
@@ -17,7 +20,7 @@ export function ServiceArea() {
             center={false}
             eyebrow="Area Layanan"
             title="Teknisi kami siap datang ke lokasi Anda"
-            desc="Melayani rumah, kos, kantor, ruko, dan restoran di area Bogor, Depok, dan Bekasi."
+            desc="Melayani rumah, kos, kantor, ruko, dan restoran di area Bogor, Depok, Bekasi, Gunung Putri, Cileungsi, dan Cibubur."
           />
 
           <div className="mt-6 flex flex-wrap gap-2">
@@ -60,7 +63,7 @@ export function ServiceArea() {
           {/* Kartu info */}
           <div className="absolute bottom-3 left-3 rounded-md border border-slate-200 bg-white/95 px-3 py-2 backdrop-blur-sm">
             <strong className="text-[12px] font-semibold text-slate-900">
-              3 area terjangkau
+              6 area terjangkau
             </strong>
             <p className="mt-0.5 text-[11px] text-slate-500">
               Teknisi terdekat siap meluncur

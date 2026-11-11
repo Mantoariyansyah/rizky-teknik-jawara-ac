@@ -85,6 +85,9 @@ export const areas = [
   "Depok",
   "Jakarta Timur",
   "Bekasi",
+  "Gunung Putri",
+  "Cileungsi",
+  "Cibubur",
 ];
 
 export type Faq = { q: string; a: string };
