@@ -4,16 +4,68 @@ import { useRef, useState, type FormEvent } from "react";
 import { Button } from "./Button";
 import { Icon } from "./Icon";
 import { SectionHeading } from "./SectionHeading";
-import { WHATSAPP_URL } from "@/lib/constants";
+import { WHATSAPP_NUMBER, WHATSAPP_URL } from "@/lib/constants";
 import { services } from "@/lib/data";
 
-const REQUIRED_FIELDS = ["nama", "whatsapp", "alamat", "layanan", "jumlah", "tanggal"] as const;
+const REQUIRED_FIELDS = [
+  "nama",
+  "whatsapp",
+  "alamat",
+  "layanan",
+  "jumlah",
+  "tanggal",
+] as const;
 type Errors = Partial<Record<string, string>>;
 
 export function BookingSection() {
   const formRef = useRef<HTMLFormElement>(null);
   const [errors, setErrors] = useState<Errors>({});
   const [success, setSuccess] = useState(false);
+
+  function buildWhatsAppMessage(data: FormData) {
+    const nama = String(data.get("nama") ?? "").trim();
+    const wa = String(data.get("whatsapp") ?? "").trim();
+    const alamat = String(data.get("alamat") ?? "").trim();
+    const layanan = String(data.get("layanan") ?? "").trim();
+    const jumlah = String(data.get("jumlah") ?? "").trim();
+    const tanggalRaw = String(data.get("tanggal") ?? "").trim();
+    const catatan = String(data.get("catatan") ?? "").trim();
+
+    // Format tanggal: 2025-01-15T14:30 -> 15 Januari 2025, 14.30
+    let tanggal = tanggalRaw;
+    if (tanggalRaw) {
+      const d = new Date(tanggalRaw);
+      if (!isNaN(d.getTime())) {
+        tanggal = d.toLocaleString("id-ID", {
+          day: "2-digit",
+          month: "long",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+      }
+    }
+
+    const lines = [
+      "Halo Bapak Aden, saya ingin booking service AC.",
+      "",
+      "*Detail Booking*",
+      `• Nama       : ${nama}`,
+      `• WhatsApp   : ${wa}`,
+      `• Alamat     : ${alamat}`,
+      `• Layanan    : ${layanan}`,
+      `• Jumlah AC  : ${jumlah} unit`,
+      `• Jadwal     : ${tanggal}`,
+    ];
+
+    if (catatan) {
+      lines.push(`• Catatan    : ${catatan}`);
+    }
+
+    lines.push("", "Mohon konfirmasi ketersediaan teknisi. Terima kasih.");
+
+    return lines.join("\n");
+  }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -24,12 +76,27 @@ export function BookingSection() {
       if (!String(data.get(key) ?? "").trim()) next[key] = "Wajib diisi";
     }
     const wa = String(data.get("whatsapp") ?? "");
-    if (wa && wa.replace(/\D/g, "").length < 10) next.whatsapp = "Nomor WhatsApp tidak valid";
+    if (wa && wa.replace(/\D/g, "").length < 10)
+      next.whatsapp = "Nomor WhatsApp tidak valid";
 
     setErrors(next);
 
     if (Object.keys(next).length === 0) {
-      // TODO: kirim `Object.fromEntries(data)` ke API route / layanan backend Anda di sini.
+      const message = buildWhatsAppMessage(data);
+      const cleanNumber = WHATSAPP_NUMBER.replace(/\D/g, "");
+      const url = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(
+        message,
+      )}`;
+
+      const targetWindow = window.open(url, "_blank", "noopener,noreferrer");
+      if (
+        !targetWindow ||
+        targetWindow.closed ||
+        typeof targetWindow.closed === "undefined"
+      ) {
+        window.location.href = url;
+      }
+
       setSuccess(true);
       formRef.current?.reset();
     } else {
@@ -44,7 +111,9 @@ export function BookingSection() {
 
   const fieldError = (name: string) =>
     errors[name] ? (
-      <span className="mt-1 block text-[11px] text-red-500">{errors[name]}</span>
+      <span className="mt-1 block text-[11px] text-red-500">
+        {errors[name]}
+      </span>
     ) : null;
 
   return (
@@ -58,7 +127,7 @@ export function BookingSection() {
             center={false}
             eyebrow="Booking Service"
             title="Atur jadwal tanpa ribet"
-            desc="Isi data singkat berikut. Tim kami akan menghubungi Anda untuk konfirmasi maksimal 10 menit."
+            desc="Isi data singkat berikut. Setelah dikirim, Anda akan diarahkan ke WhatsApp admin untuk konfirmasi."
           />
 
           <div className="mt-8 rounded-lg bg-sky-950 p-5 text-white">
@@ -123,7 +192,9 @@ export function BookingSection() {
                   Pilih layanan
                 </option>
                 {services.map((s) => (
-                  <option key={s.title}>{s.title}</option>
+                  <option key={s.title} value={s.title}>
+                    {s.title}
+                  </option>
                 ))}
               </select>
               {fieldError("layanan")}
@@ -176,8 +247,9 @@ export function BookingSection() {
                 <Icon name="check" className="h-2.5 w-2.5" />
               </span>
               <span>
-                <b className="font-semibold">Booking berhasil dikirim.</b>{" "}
-                Tim kami akan segera menghubungi Anda melalui WhatsApp.
+                <b className="font-semibold">Booking dikirim ke WhatsApp.</b>{" "}
+                Silakan lanjutkan percakapan di tab WhatsApp yang sudah terbuka
+                untuk konfirmasi jadwal.
               </span>
             </div>
           )}

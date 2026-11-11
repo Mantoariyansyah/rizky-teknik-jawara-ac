@@ -1,4 +1,4 @@
-import { BeforeAfter } from "@/components/BeforeAfter";
+import { WorkGallery } from "@/components/BeforeAfter";
 import { BookingSection } from "@/components/BookingSection";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Faq } from "@/components/Faq";
@@ -24,7 +24,7 @@ export default function HomePage() {
         <Pricing />
         <HowItWorks />
         <BookingSection />
-        <BeforeAfter />
+        <WorkGallery />
         <Testimonials />
         <ServiceArea />
         <Faq />

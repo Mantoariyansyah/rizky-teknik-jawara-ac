@@ -43,10 +43,10 @@ export type Price = {
 };
 
 export const prices: Price[] = [
-  { title: "Cuci AC 0,5–1 PK", price: "Rp 75.000", note: "Pembersihan unit indoor & outdoor" },
+  { title: "Cuci AC 0,5–1 PK", price: "Rp 85.000", note: "Pembersihan unit indoor & outdoor" },
   { title: "Cuci AC 1,5–2 PK", price: "Rp 100.000", note: "Untuk unit berkapasitas besar", popular: true },
   { title: "Isi Freon R32/R410", price: "Rp 250.000", prefix: "Mulai", note: "Termasuk cek tekanan & kebocoran" },
-  { title: "Pasang AC Baru", price: "Rp 350.000", prefix: "Mulai", note: "Instalasi standar hingga 3 meter" },
+  { title: "Pasang AC Baru", price: "Rp 400.000", prefix: "Mulai", note: "Instalasi standar hingga 3 meter" },
   { title: "Perbaikan AC", price: "Gratis cek", note: "Biaya transparan sesuai kerusakan" },
 ];
 
@@ -81,13 +81,10 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const areas = [
-  "Bogor Kota",
   "Kab. Bogor",
   "Depok",
   "Jakarta Timur",
-  "Jakarta Selatan",
   "Bekasi",
-  "Tangerang Selatan",
 ];
 
 export type Faq = { q: string; a: string };

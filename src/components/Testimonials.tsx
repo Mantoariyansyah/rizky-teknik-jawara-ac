@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Icon } from "./Icon";
 import { SectionHeading } from "./SectionHeading";
 import { testimonials } from "@/lib/data";
@@ -16,7 +15,7 @@ export function Testimonials() {
           desc="Kepuasan pelanggan adalah standar utama dalam setiap pekerjaan kami."
         />
         <div className="grid gap-4 md:grid-cols-3">
-          {testimonials.map(({ name, role, quote, img }) => (
+          {testimonials.map(({ name, role, quote }) => (
             <article
               key={name}
               className="flex flex-col rounded-lg border border-slate-200 bg-white p-5"
@@ -32,13 +31,9 @@ export function Testimonials() {
               </p>
 
               <div className="mt-5 flex items-center gap-2.5 border-t border-slate-100 pt-4">
-                <Image
-                  src={img}
-                  alt={`Foto ${name}`}
-                  width={36}
-                  height={36}
-                  className="h-9 w-9 rounded-full object-cover"
-                />
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-500">
+                  <Icon name="user" className="h-4 w-4" />
+                </div>
                 <div>
                   <h3 className="text-[13px] font-semibold text-slate-900">
                     {name}

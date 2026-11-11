@@ -10,7 +10,7 @@ export function Hero() {
       <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-10">
         <div className="relative z-10">
           <p className="mb-3 text-[10px] font-semibold uppercase tracking-wider text-sky-700">
-            Siap datang hari ini · Jabodetabek
+            Siap datang hari ini · Bogor, Depok, Bekasi
           </p>
 
           <h1 className="max-w-xl text-2xl font-bold leading-tight tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">

@@ -97,7 +97,7 @@ export function Footer() {
                 name="mail"
                 className="mt-0.5 h-4 w-4 shrink-0 text-slate-500"
               />
-              halo@coolfixac.id
+              rizkyfajillah@gmail.com
             </li>
           </ul>
         </div>
