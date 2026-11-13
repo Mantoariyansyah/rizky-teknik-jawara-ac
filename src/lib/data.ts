@@ -15,15 +15,15 @@ export const nav: NavItem[] = [
 export type Service = { icon: IconName; title: string; desc: string };
 
 export const services: Service[] = [
-  { icon: "snow", title: "Cuci AC", desc: "Bersihkan debu, jamur, dan kotoran agar udara kembali segar." },
-  { icon: "drop", title: "Isi / Tambah Freon", desc: "Pengecekan tekanan dan pengisian freon R32, R410, atau R22." },
-  { icon: "tool", title: "Perbaikan AC", desc: "Atasi AC tidak dingin, bocor, mati, atau bunyi berisik." },
-  { icon: "plus", title: "Pasang AC Baru", desc: "Instalasi rapi, aman, dan sesuai standar untuk semua merek." },
-  { icon: "move", title: "Bongkar & Pindah AC", desc: "Relokasi unit tanpa risiko kerusakan dan kehilangan freon." },
-  { icon: "calendar", title: "Perawatan Berkala", desc: "Kontrak perawatan rutin untuk rumah, kantor, dan usaha." },
-  { icon: "box", title: "Sparepart & Unit AC", desc: "Sparepart original serta AC baru dan bekas berkualitas." },
-  { icon: "building", title: "AC Komersial", desc: "Servis skala kantor, ruko, restoran, dan properti komersial." },
-  { icon: "refresh", title: "Jual Beli AC Second", desc: "Beli AC second berkualitas atau jual unit lama Anda dengan harga wajar." },
+  { icon: "snow", title: "Cuci AC", desc: "Bersihkan debu, jamur, dan kotoran agar udara kembali segar dan AC bekerja lebih efisien." },
+  { icon: "drop", title: "Isi / Tambah Freon", desc: "Pengecekan tekanan dan pengisian freon R32, R410, atau R22 sesuai spesifikasi unit." },
+  { icon: "tool", title: "Perbaikan AC", desc: "Atasi AC tidak dingin, bocor, mati total, atau bunyi berisik oleh teknisi berpengalaman." },
+  { icon: "plus", title: "Pasang AC Baru", desc: "Instalasi rapi, aman, dan sesuai standar untuk semua merek: Daikin, Panasonic, LG, Sharp, Samsung." },
+  { icon: "move", title: "Bongkar & Pindah AC", desc: "Relokasi unit AC tanpa risiko kerusakan dan kehilangan freon, pindah lokasi tetap aman." },
+  { icon: "calendar", title: "Perawatan Berkala", desc: "Kontrak perawatan rutin untuk rumah, kos, kantor, ruko, dan tempat usaha." },
+  { icon: "box", title: "Sparepart & Unit AC", desc: "Sparepart original serta AC baru dan bekas berkualitas dengan harga wajar." },
+  { icon: "building", title: "AC Komersial", desc: "Servis skala besar: kantor, ruko, restoran, hotel, dan properti komersial." },
+  { icon: "refresh", title: "Jual Beli AC Second", desc: "Beli AC second berkualitas atau jual unit lama Anda dengan harga wajar dan transparan." },
 ];
 
 export type Feature = { icon: IconName; title: string; desc: string };
@@ -90,22 +90,23 @@ export const areas = [
   "Gunung Putri",
   "Cileungsi",
   "Cibubur",
+  "Kota Wisata"
 ];
 
 export type Faq = { q: string; a: string };
 
 export const faqs: Faq[] = [
   {
-    q: "Berapa lama proses pengerjaan service AC?",
-    a: "Cuci AC standar biasanya memerlukan 30–45 menit per unit. Untuk perbaikan, durasi menyesuaikan hasil pengecekan teknisi.",
+    q: "Berapa lama proses pengerjaan service AC di Bogor atau Bekasi?",
+    a: "Cuci AC standar biasanya memerlukan 30–45 menit per unit. Untuk perbaikan, durasi menyesuaikan hasil pengecekan teknisi. Teknisi kami siap datang ke wilayah Bogor, Bekasi, Depok, Jakarta Timur, Cileungsi, Cibubur, dan Kota Wisata.",
   },
   {
-    q: "Apakah ada garansi setelah servis?",
-    a: "Ya, setiap layanan perbaikan kami dilindungi garansi hingga 30 hari sesuai jenis pekerjaan dan sparepart.",
+    q: "Apakah ada garansi setelah servis AC?",
+    a: "Ya, setiap layanan perbaikan kami dilindungi garansi hingga 30 hari sesuai jenis pekerjaan dan sparepart yang digunakan.",
   },
   {
     q: "Merek AC apa saja yang bisa ditangani?",
-    a: "Kami menangani hampir semua merek populer seperti Daikin, Panasonic, LG, Samsung, Sharp, Gree, Mitsubishi, dan lainnya.",
+    a: "Kami menangani hampir semua merek populer: Daikin, Panasonic, LG, Samsung, Sharp, Gree, Mitsubishi, Toshiba, dan lainnya.",
   },
   {
     q: "Metode pembayaran apa yang tersedia?",
@@ -113,10 +114,14 @@ export const faqs: Faq[] = [
   },
   {
     q: "Kapan AC perlu dicuci?",
-    a: "Idealnya setiap 3–4 bulan untuk rumah, atau 1–2 bulan untuk kantor dan tempat usaha dengan pemakaian intensif.",
+    a: "Idealnya setiap 3–4 bulan untuk rumah, atau 1–2 bulan untuk kantor dan tempat usaha dengan pemakaian intensif. Cuci AC rutin memperpanjang usia unit dan menghemat listrik.",
   },
   {
-    q: "Apakah bisa servis di hari libur?",
-    a: "Bisa. Tim kami tersedia setiap hari pukul 07.00–21.00, termasuk akhir pekan dan hari libur dengan reservasi.",
+    q: "Apakah bisa servis AC di hari libur?",
+    a: "Bisa. Tim kami tersedia setiap hari pukul 07.00–21.00 WIB, termasuk akhir pekan dan hari libur nasional dengan reservasi terlebih dahulu.",
+  },
+  {
+    q: "Bagaimana cara booking jasa service AC?",
+    a: "Sangat mudah — cukup hubungi kami via WhatsApp atau isi form booking di halaman ini. Admin akan konfirmasi jadwal dan estimasi harga sebelum teknisi datang.",
   },
 ];

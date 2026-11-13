@@ -9,6 +9,8 @@ const markers: [number, number][] = [
   [30, 60],
   [55, 55],
   [45, 80],
+  [70, 72],
+  [18, 42],
 ];
 
 export function ServiceArea() {
@@ -20,7 +22,7 @@ export function ServiceArea() {
             center={false}
             eyebrow="Area Layanan"
             title="Teknisi kami siap datang ke lokasi Anda"
-            desc="Melayani rumah, kos, kantor, ruko, dan restoran di area Bogor, Depok, Bekasi, Gunung Putri, Cileungsi, dan Cibubur."
+            desc="Melayani jasa service AC untuk rumah, kos, kantor, ruko, dan restoran di wilayah Kabupaten Bogor, Kota Bekasi, Depok, Jakarta Timur, Gunung Putri, Cileungsi, Cibubur, dan Kota Wisata."
           />
 
           <div className="mt-6 flex flex-wrap gap-2">
@@ -63,7 +65,7 @@ export function ServiceArea() {
           {/* Kartu info */}
           <div className="absolute bottom-3 left-3 rounded-md border border-slate-200 bg-white/95 px-3 py-2 backdrop-blur-sm">
             <strong className="text-[12px] font-semibold text-slate-900">
-              6 area terjangkau
+              {areas.length} area terjangkau
             </strong>
             <p className="mt-0.5 text-[11px] text-slate-500">
               Teknisi terdekat siap meluncur

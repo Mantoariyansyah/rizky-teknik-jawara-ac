@@ -1,0 +1,15 @@
+import type { MetadataRoute } from "next";
+
+const BASE_URL = "https://www.rizkyteknik-jawaraac.com";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    {
+      url: BASE_URL,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+  ];
+}
+

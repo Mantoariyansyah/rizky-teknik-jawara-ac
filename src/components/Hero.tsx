@@ -2,7 +2,7 @@ import { Button } from "./Button";
 import { Icon } from "./Icon";
 import { WHATSAPP_URL } from "@/lib/constants";
 
-const badges = ["Garansi 30 Hari", "Teknisi Bersertifikat", "Datang Hari Ini"];
+const badges = ["Garansi 30 Hari", "Teknisi Berpengalaman", "Datang Hari Ini"];
 
 export function Hero() {
   return (
@@ -10,7 +10,7 @@ export function Hero() {
       <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-10">
         <div className="relative z-10">
           <p className="mb-3 text-[10px] font-semibold uppercase tracking-wider text-sky-700">
-            Siap datang hari ini · Bogor, Depok, Bekasi
+            Siap datang hari ini ·
           </p>
 
           <h1 className="max-w-xl text-2xl font-bold leading-tight tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
@@ -19,8 +19,9 @@ export function Hero() {
           </h1>
 
           <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-600">
-            Teknisi berpengalaman datang ke lokasi Anda. Cuci AC, isi freon,
-            perbaikan, pemasangan baru, hingga jual beli AC second.
+            Teknisi berpengalaman datang ke lokasi Anda di Bogor, Bekasi,
+            Depok, Jakarta Timur, Cileungsi, Cibubur, dan sekitarnya. Cuci AC,
+            isi freon, perbaikan, pemasangan baru, hingga jual beli AC second.
           </p>
 
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
