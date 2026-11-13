@@ -14,7 +14,8 @@ export function Services() {
           title="Solusi lengkap untuk semua kebutuhan AC"
           desc="Dari perawatan rutin hingga perbaikan kompleks, teknisi kami siap membantu dengan standar kerja terbaik."
         />
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {/* 9 item → pakai 3 kolom agar rapi (3x3) */}
+        <div className="grid gap-3 sm:grid-cols-3">
           {services.map((item) => (
             <article
               key={item.title}

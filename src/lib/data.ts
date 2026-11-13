@@ -23,6 +23,7 @@ export const services: Service[] = [
   { icon: "calendar", title: "Perawatan Berkala", desc: "Kontrak perawatan rutin untuk rumah, kantor, dan usaha." },
   { icon: "box", title: "Sparepart & Unit AC", desc: "Sparepart original serta AC baru dan bekas berkualitas." },
   { icon: "building", title: "AC Komersial", desc: "Servis skala kantor, ruko, restoran, dan properti komersial." },
+  { icon: "refresh", title: "Jual Beli AC Second", desc: "Beli AC second berkualitas atau jual unit lama Anda dengan harga wajar." },
 ];
 
 export type Feature = { icon: IconName; title: string; desc: string };
@@ -43,11 +44,12 @@ export type Price = {
 };
 
 export const prices: Price[] = [
-  { title: "Cuci AC 0,5–1 PK", price: "Rp 85.000", note: "Pembersihan unit indoor & outdoor" },
-  { title: "Cuci AC 1,5–2 PK", price: "Rp 100.000", note: "Untuk unit berkapasitas besar", popular: true },
-  { title: "Isi Freon R32/R410", price: "Rp 250.000", prefix: "Mulai", note: "Termasuk cek tekanan & kebocoran" },
-  { title: "Pasang AC Baru", price: "Rp 400.000", prefix: "Mulai", note: "Instalasi standar hingga 3 meter" },
-  { title: "Perbaikan AC", price: "Gratis cek", note: "Biaya transparan sesuai kerusakan" },
+  { title: "Cuci AC 0,5–1 PK",       price: "Rp 80.000",  note: "Pembersihan unit indoor & outdoor" },
+  { title: "Cuci AC 1,5–2 PK",       price: "Rp 100.000", note: "Untuk unit berkapasitas besar", popular: true },
+  { title: "Isi Freon R32/R410",     price: "Rp 250.000", prefix: "Mulai", note: "Termasuk cek tekanan & kebocoran" },
+  { title: "Pasang AC Baru",         price: "Rp 350.000", prefix: "Mulai", note: "Instalasi standar hingga 3 meter" },
+  { title: "Bongkar & Pasang AC",    price: "Rp 450.000", note: "Bongkar unit lama & pasang kembali di lokasi baru" },
+  { title: "Perbaikan AC",           price: "Gratis cek", note: "Biaya transparan sesuai kerusakan" },
 ];
 
 export const steps: Feature[] = [

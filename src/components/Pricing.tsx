@@ -6,7 +6,7 @@ export function Pricing() {
   return (
     <section
       id="harga"
-      className="scroll-mt-20 border-t border-slate-200 bg-slate-50 py-16 md:py-20"
+      className="scroll-mt-20 border-t border-slate-200 bg-slate-50 py-16 md:py-16"
     >
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <SectionHeading
@@ -14,7 +14,8 @@ export function Pricing() {
           title="Harga jelas, tanpa biaya tersembunyi"
           desc="Dapatkan layanan profesional dengan harga yang masuk akal dan disepakati di awal."
         />
-        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-5">
+        {/* 6 layanan → grid 2 kolom di md, 3 kolom di lg = rapi 3×2 */}
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {prices.map((item) => (
             <article
               key={item.title}

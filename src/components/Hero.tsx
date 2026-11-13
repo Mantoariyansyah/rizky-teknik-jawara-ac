@@ -20,7 +20,7 @@ export function Hero() {
 
           <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-600">
             Teknisi berpengalaman datang ke lokasi Anda. Cuci AC, isi freon,
-            perbaikan, hingga pemasangan baru.
+            perbaikan, pemasangan baru, hingga jual beli AC second.
           </p>
 
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">

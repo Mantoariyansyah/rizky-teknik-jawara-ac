@@ -4,7 +4,7 @@ export type IconName =
   | "snow" | "drop" | "tool" | "plus" | "move" | "calendar" | "box" | "building"
   | "user" | "tag" | "shield" | "bolt" | "phone" | "pin" | "clock" | "check"
   | "arrow" | "menu" | "close" | "chevron" | "star" | "message" | "mail"
-  | "instagram" | "facebook" | "tiktok";
+  | "instagram" | "facebook" | "tiktok" | "refresh";
 
 const paths: Record<IconName, ReactNode> = {
   snow: (
@@ -101,6 +101,14 @@ const paths: Record<IconName, ReactNode> = {
     <path d="M14 22v-9h3l.5-4H14V6.5c0-1.2.4-2 2-2H18V1.1c-.4-.1-1.6-.1-3-.1-3 0-5 1.8-5 5.2V9H7v4h3v9h4Z" />
   ),
   tiktok: <path d="M15 3v11.5a4.5 4.5 0 1 1-4.5-4.5M15 3c.6 2.7 2.1 4.3 5 5" />,
+  refresh: (
+    <>
+      <path d="M21 12a9 9 0 0 1-15.5 6.3L3 16" />
+      <path d="M3 21v-5h5" />
+      <path d="M3 12a9 9 0 0 1 15.5-6.3L21 8" />
+      <path d="M21 3v5h-5" />
+    </>
+  ),
 };
 
 export function Icon({ name, className = "h-5 w-5" }: { name: IconName; className?: string }) {
